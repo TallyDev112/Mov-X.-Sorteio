@@ -34,24 +34,24 @@ body::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-image: url('IMG/panel-1.png');
+    background-image: url('img/panel-1.png');
     backdrop-filter: blur(2px);
 }
 
 .container.bg-sorteio {
-   background-image: url('IMG/panel-1.png');
+   background-image: url('img/panel-1.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
 
 .container.bg-historico {
-   background-image: url('IMG/panel-2.png');
+   background-image: url('img/panel-2.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
 
 .container.bg-checklist {
-   background-image: url('IMG/panel-3.png');
+   background-image: url('img/panel-3.png');
    background-repeat: no-repeat;
    background-size: cover;
 }
