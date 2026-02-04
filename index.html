@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio simples</title><link href="https://fonts.cdnfonts.com/css/ghastly-panic" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <main class="container">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="#tab-sorteio">Sorteio</button>
+            <button class="tab-btn" data-tab="#tab-historico">Histórico</button>
+            <button class="tab-btn" data-tab="#tab-checklist">Checklist</button>
+        </div>
+
+        <div class="tab-panels">
+            <section class="tab-panel active" id="tab-sorteio">
+                <h1>Sorteio de listas</h1>
+
+                <section class="list-box collapsible" id="lista">
+                    <div class="inputs">
+                        <div>
+                            <input type="text" id="entrada" placeholder="Digite um item da lista">
+                        </div>
+                        <div class="botoes-header">
+                            <button id="add">Adicionar Nomes</button>
+                            <button id="add-sort">Adicionar Sorteio</button>
+                        </div>
+                    </div>
+
+                    <div class="section-header">
+                        <h2>Lista de nomes</h2>
+                        <button class="hamburger toggle-collapsible" data-target="#lista" aria-expanded="true" aria-controls="lista-body">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                    <div class="collapsible-body" id="lista-body">
+                        <ul id="itens"></ul>
+                    </div>
+
+                    <section class="actions">
+                        <button id="sortear">Fazer sorteio</button>
+                        <span id="status"></span>
+                    </section>
+                </section>
+
+                <section class="resultado collapsible" id="resultado-wrapper">
+                    <div class="section-header">
+                        <h2>Resultados</h2>
+                        <button class="hamburger toggle-collapsible" data-target="#resultado-wrapper" aria-expanded="true" aria-controls="resultado-body">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                    <div class="collapsible-body" id="resultado-body">
+                        <input type="hidden" id="res-count" value="2">
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span class="remove-res">x</span>
+                            <p><strong>Resultado 1:</strong> <span class="span-resultado" id="resultado1">—</span></p>
+                        </div>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            <span class="remove-res">x</span>
+                            <p><strong>Resultado 2:</strong> <span class="span-resultado" id="resultado2">—</span></p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+            <section class="tab-panel" id="tab-historico">
+                <h1>Histórico</h1>
+                <section class="historico" id="historico-wrapper">
+                    <div>
+                        <div class="botoes-header">
+                            <button id="exportar-historico">Exportar sorteios</button>
+                            <button id="limpar-historico">Limpar sorteios</button>
+                        </div>
+                    </div>
+                    <div id="historico-body">
+                        <p class="hist-vazio">Nenhum sorteio ainda.</p>
+                    </div>
+                </section>
+            </section>
+
+            <section class="tab-panel" id="tab-checklist">
+                <h1>Checklist</h1>
+                <section class="checklist" id="checklist-wrapper">
+                    <div class="section-header">
+                    </div>
+
+                    <div class="checklist-inputs">
+                        <input type="text" id="chk-nome" placeholder="Adicionar nome">
+                        <button id="chk-add">Adicionar</button>
+                    </div>
+
+                    <div class="checklist-tags" id="chk-tags-container">
+                        <!-- botões de tags gerados via JS -->
+                    </div>
+                </section>
+
+                <div id="chk-lista">
+                    <p class="chk-vazio">Nenhum nome adicionado.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
